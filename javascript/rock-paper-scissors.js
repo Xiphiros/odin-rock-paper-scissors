@@ -35,7 +35,7 @@ function verifyPlayerChoice() {
            return playerChoice;
             break;
         default:
-            return alert("Please enter a valid choice!");
+            return playerChoice = "invalid"
             break;
     }
 }   
@@ -55,5 +55,17 @@ function getComputerChoice() {
         case 3:
             return computerChoice = "scissors";
             break;
+    }
+}
+
+function playRound(playerChoice, computerChoice) {
+    let result = "null"
+
+    if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
+        return result = "win"
+    } else if (playerChoice == "rock" && computerChoice == "paper" || playerChoice == "paper" && computerChoice == "scissors" || playerChoice == "scissors" && computerChoice == "rock") {
+        return result = "lose"
+    } else {
+        return result = "tie"
     }
 }
