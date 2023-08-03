@@ -12,13 +12,14 @@
     Compare user's choice with the computer's choice
     Return the winner of the game
 
-    Use the previous function to play 5 rounds of the game
+    Call previous function 5 times
 */
 
 alert("This is rock paper scissors!")
 alert("After this message, input your choice to be played against the computer!")
 let playerChoice = prompt()
 let computerChoice = null
+let maxRounds = 5;
 
 
 function verifyPlayerChoice() {
@@ -69,3 +70,18 @@ function playRound(playerChoice, computerChoice) {
         return result = "tie"
     }
 }
+
+function playGame() {
+    for (let i = 1; i <= maxRounds ; i++) {
+        verifyPlayerChoice()
+        getComputerChoice()
+        console.log("Round number: " + i)
+        console.log("The player's choice was: " + playerChoice)
+        console.log("The computer's choice was: " + computerChoice)
+        console.log("The result was a " + playRound(playerChoice, computerChoice))
+        playerChoice = prompt()
+    }
+}
+
+playGame()
+
