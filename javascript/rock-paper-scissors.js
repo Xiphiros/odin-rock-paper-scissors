@@ -73,13 +73,29 @@ function playRound(playerChoice, computerChoice) {
 
 function playGame() {
     for (let i = 1; i <= maxRounds ; i++) {
+        let result = null
+
         verifyPlayerChoice()
-        getComputerChoice()
-        console.log("Round number: " + i)
-        console.log("The player's choice was: " + playerChoice)
-        console.log("The computer's choice was: " + computerChoice)
-        console.log("The result was a " + playRound(playerChoice, computerChoice))
-        playerChoice = prompt()
+
+        if (playerChoice == "invalid") {
+            alert("Please enter a valid choice!")
+            break;
+        } else {
+            getComputerChoice()
+            result = playRound(playerChoice, computerChoice)
+
+            if (result == "win") {
+                console.log("You Win! " + (playerChoice.substr(0,1)).toUpperCase() + playerChoice.substr(1) + " beats " + (computerChoice.substr(0,1)).toUpperCase() + computerChoice.substr(1))
+            } else if (result == "lose") {
+                console.log("You Lose! " + (computerChoice.substr(0,1)).toUpperCase() + computerChoice.substr(1) + " beats " + (playerChoice.substr(0,1)).toUpperCase() + playerChoice.substr(1))
+            } else {
+                console.log("It's a tie!")
+            }
+
+            if (i < maxRounds) {
+                playerChoice = prompt()
+            }
+        }
     }
 }
 
