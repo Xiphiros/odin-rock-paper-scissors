@@ -1,27 +1,11 @@
-/*
-    Introduction message to the user
-    Get prompt from the user
-
-    Make user's prompt lowercase
-    Verify that user's prompt is valid
-
-
-    Generate computer's choice
-    Generate random number between 1 and 3
-
-    Compare user's choice with the computer's choice
-    Return the winner of the game
-
-    Call previous function 5 times
-*/
-
+// Introduction of the program to the player and definition of variables
 alert("This is rock paper scissors!")
 alert("After this message, input your choice to be played against the computer!")
 let playerChoice = prompt()
 let computerChoice = null
 let maxRounds = 5;
 
-
+// Definition of function to verify that input is valid
 function verifyPlayerChoice() {
     playerChoice = playerChoice.toLowerCase()
 
@@ -41,6 +25,7 @@ function verifyPlayerChoice() {
     }
 }   
 
+// Generate random number between 1 and 3 and convert number to a choice
 function getComputerChoice() {
     let min = Math.ceil(1)
     let max = Math.floor(3);
@@ -59,6 +44,7 @@ function getComputerChoice() {
     }
 }
 
+// Based on previous function compare randomly generated choice to player's input and determine and outcome
 function playRound(playerChoice, computerChoice) {
     let result = "null"
 
@@ -72,11 +58,14 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function playGame() {
+
+    // Loop that plays the game for the specified number of rounds (maxRounds)
     for (let i = 1; i <= maxRounds ; i++) {
         let result = null
 
         verifyPlayerChoice()
 
+        // Based on previous function call break the loop if the player's input is invalid
         if (playerChoice == "invalid") {
             alert("Please enter a valid choice!")
             break;
@@ -84,6 +73,7 @@ function playGame() {
             getComputerChoice()
             result = playRound(playerChoice, computerChoice)
 
+            // console.log output according to the project requirements, here I used string methods to capitalize the output as it appears on The Odin Project's Rock Paper Scissors assignment step 4
             if (result == "win") {
                 console.log("You Win! " + (playerChoice.substr(0,1)).toUpperCase() + playerChoice.substr(1) + " beats " + (computerChoice.substr(0,1)).toUpperCase() + computerChoice.substr(1))
             } else if (result == "lose") {
