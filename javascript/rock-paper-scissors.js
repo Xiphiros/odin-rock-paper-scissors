@@ -13,8 +13,6 @@ let maxRounds = 5;
 const playerButtons = document.querySelectorAll('.player-choice-container .options-item')
 
 playerButtons.forEach(button => {
-    let lastClicked = null;
-
     button.addEventListener('click', () => {
         const playerChoiceDisplay = document.querySelector('.player-choice-container .choice-display');
         playerChoiceDisplay.textContent = button.firstChild.textContent;
@@ -85,5 +83,3 @@ function playGame() {
         }
     }
 }
-
-console.log(playerChoice)
