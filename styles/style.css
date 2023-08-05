@@ -1,0 +1,131 @@
+
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.header ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Player and computer choice containers */
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 25rem;
+    min-height: 25rem;
+    border-radius: 0.5rem;
+}
+
+.choice-display {
+    border-radius: 0.5rem;
+}
+
+.options-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.options-container p {
+    font-weight: bold;
+}
+
+.options-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 5rem;
+    min-height: 3rem;
+    border-radius: 2rem;
+}
+
+/* Info container (rounds number, result, etc) */
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20rem;
+    min-height: 10rem;
+    border: 0.3rem solid #214d70;
+    border-radius: 0.5rem;
+}
+
+.result-container {
+    min-width: 6rem;
+    min-height: 3rem;
+    border: 0.3rem solid #214d70;
+    border-radius: 0.3rem;
+}
+
+/* Player choice containers */
+
+.player-choice-container {
+    border: 0.3rem solid #425A91;
+}
+
+.player-choice-container .choice-display {
+    min-width: 10rem;
+    min-height: 4rem;
+    border: 0.3rem solid #425A91;
+}
+
+.player-choice-container .options-item {
+    border: 0.2rem solid #425A91
+}
+
+/* Computer containers */
+
+.computer-choice-container {
+    border: 0.3rem solid #DF464D;
+}
+
+.computer-choice-container .choice-display {
+    min-width: 10rem;
+    min-height: 4rem;
+    border: 0.3rem solid #DF464D;
+}
+
+.computer-choice-container .options-item {
+    border: 0.2rem solid #DF464D
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}

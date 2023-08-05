@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <script type="text/javascript" src="javascript/rock-paper-scissors.js"></script>
     <title>Rock Paper Scissors!</title>
 </head>
 <body>
-    
+    <div class="header">
+        <ul class="header-left-side">
+            <li>Home</li>
+        </ul>
+
+        <ul class="header-right-side">
+            <li>Placeholder</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="choice-container player-choice-container">
+            <div class="name-container">
+                <h2>Player</h2>
+            </div>
+            <div class="choice-display"></div>
+            <div class="options-container player-options-container">
+                <div class="options-item"><p>Rock</p></div>
+                <div class="options-item"><p>Paper</p></div>
+                <div class="options-item"><p>Scissors</p></div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h2>Result</h2>
+
+            <div class="result-container"></div>
+        </div>
+
+        <div class="choice-container computer-choice-container">
+            <div class="name-container">
+                <h2>Computer</h2>
+            </div>
+            <div class="choice-display"></div>
+            <div class="options-container">
+                <div class="options-item"><p>Rock</p></div>
+                <div class="options-item"><p>Paper</p></div>
+                <div class="options-item"><p>Scissors</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Made by Xiphiros for The Odin Project</p>
+    </div>
 </body>
 </html>
