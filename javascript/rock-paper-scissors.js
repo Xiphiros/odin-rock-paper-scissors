@@ -1,7 +1,6 @@
 // Introduction of the program to the player and definition of variables
 let playerChoice = null
 let computerChoice = null
-let maxRounds = 5;
 
 const playerButtons = document.querySelectorAll('.player-choice-container .options-item')
 
