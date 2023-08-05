@@ -3,13 +3,6 @@ let playerChoice = null
 let computerChoice = null
 let maxRounds = 5;
 
-
-// Get user input after clicking on respective button
-
-// Add a unique identifier to each button on click
-
-// For each button modify choice display to show text of their own child p
-
 const playerButtons = document.querySelectorAll('.player-choice-container .options-item')
 
 playerButtons.forEach(button => {
@@ -28,58 +21,59 @@ function getComputerChoice() {
 
     switch(randomNumber) {
         case 1:
-            return computerChoice = "rock";
+            return computerChoice = 'Rock';
             break;
         case 2:
-            return computerChoice = "paper";
+            return computerChoice = 'Paper';
             break;
         case 3:
-            return computerChoice = "scissors";
+            return computerChoice = 'Scissors';
             break;
     }
 }
 
 // Based on previous function compare randomly generated choice to player's input and determine and outcome
 function playRound(playerChoice, computerChoice) {
-    let result = "null"
+    let result = 'null'
 
-    if (playerChoice == "rock" && computerChoice == "scissors" || playerChoice == "paper" && computerChoice == "rock" || playerChoice == "scissors" && computerChoice == "paper") {
-        return result = "win"
-    } else if (playerChoice == "rock" && computerChoice == "paper" || playerChoice == "paper" && computerChoice == "scissors" || playerChoice == "scissors" && computerChoice == "rock") {
-        return result = "lose"
+    if (playerChoice == 'Rock' && computerChoice == 'Scissors' || playerChoice == 'Paper' && computerChoice == 'Rock' || playerChoice == 'Scissors' && computerChoice == 'Paper') {
+        return result = 'Win'
+    } else if (playerChoice == 'Rock' && computerChoice == 'Paper' || playerChoice == 'Paper' && computerChoice == 'Scissors' || playerChoice == 'Scissors' && computerChoice == 'Rock') {
+        return result = 'Lose'
     } else {
-        return result = "tie"
+        return result = 'Tie'
     }
 }
 
 function playGame() {
+    const computerChoiceDisplay = document.querySelector('.computer-choice-container .choice-display');
+    const resultDisplay = document.querySelector('.result-display');
+    const playerScoreDisplay = document.querySelector('.player-score-display');
+    const computerScoreDisplay = document.querySelector('.computer-score-display');
 
-    // Loop that plays the game for the specified number of rounds (maxRounds)
-    for (let i = 1; i <= maxRounds ; i++) {
-        let result = null
 
-        verifyPlayerChoice()
-
-        // Based on previous function call break the loop if the player's input is invalid
-        if (playerChoice == "invalid") {
-            alert("Please enter a valid choice!")
-            break;
-        } else {
-            getComputerChoice()
-            result = playRound(playerChoice, computerChoice)
-
-            // console.log output according to the project requirements, here I used string methods to capitalize the output as it appears on The Odin Project's Rock Paper Scissors assignment step 4
-            if (result == "win") {
-                console.log("You Win! " + (playerChoice.substr(0,1)).toUpperCase() + playerChoice.substr(1) + " beats " + (computerChoice.substr(0,1)).toUpperCase() + computerChoice.substr(1))
-            } else if (result == "lose") {
-                console.log("You Lose! " + (computerChoice.substr(0,1)).toUpperCase() + computerChoice.substr(1) + " beats " + (playerChoice.substr(0,1)).toUpperCase() + playerChoice.substr(1))
-            } else {
-                console.log("It's a tie!")
-            }
-
-            if (i < maxRounds) {
-                playerChoice = prompt()
-            }
-        }
+    if (playerChoice == null) {
+        resultDisplay.textContent = 'ERROR'
+        return 0;
     }
+
+    computerChoice = getComputerChoice();
+
+    let result = playRound(playerChoice, computerChoice);
+
+    if (result == 'Win') {
+        playerScoreDisplay.textContent = +playerScoreDisplay.textContent + 1;
+    } else if (result == 'Lose') {
+        computerScoreDisplay.textContent= +computerScoreDisplay.textContent + 1;
+    } else {
+        playerScoreDisplay.textContent = +playerScoreDisplay.textContent + 1;
+        computerScoreDisplay.textContent= +computerScoreDisplay.textContent + 1;
+    }
+
+    computerChoiceDisplay.textContent = computerChoice;
+    resultDisplay.textContent = result;
 }
+
+const playButton = document.querySelector('.play-button');
+
+playButton.addEventListener('click', playGame)
