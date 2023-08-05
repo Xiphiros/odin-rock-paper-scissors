@@ -1,7 +1,5 @@
 // Introduction of the program to the player and definition of variables
-alert("This is rock paper scissors!")
-alert("After this message, input your choice to be played against the computer!")
-let playerChoice = prompt()
+let playerChoice = null
 let computerChoice = null
 let maxRounds = 5;
 
@@ -88,6 +86,3 @@ function playGame() {
         }
     }
 }
-
-playGame()
-
