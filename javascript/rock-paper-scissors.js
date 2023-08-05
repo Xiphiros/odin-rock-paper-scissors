@@ -3,25 +3,24 @@ let playerChoice = null
 let computerChoice = null
 let maxRounds = 5;
 
-// Definition of function to verify that input is valid
-function verifyPlayerChoice() {
-    playerChoice = playerChoice.toLowerCase()
 
-    switch(playerChoice) {
-        case "rock":
-            return playerChoice;
-            break;
-        case "paper":
-            return playerChoice;
-            break;
-        case "scissors":
-           return playerChoice;
-            break;
-        default:
-            return playerChoice = "invalid"
-            break;
-    }
-}   
+// Get user input after clicking on respective button
+
+// Add a unique identifier to each button on click
+
+// For each button modify choice display to show text of their own child p
+
+const playerButtons = document.querySelectorAll('.player-choice-container .options-item')
+
+playerButtons.forEach(button => {
+    let lastClicked = null;
+
+    button.addEventListener('click', () => {
+        const playerChoiceDisplay = document.querySelector('.player-choice-container .choice-display');
+        playerChoiceDisplay.textContent = button.firstChild.textContent;
+        playerChoice = button.firstChild.textContent;
+    })
+});
 
 // Generate random number between 1 and 3 and convert number to a choice
 function getComputerChoice() {
@@ -86,3 +85,5 @@ function playGame() {
         }
     }
 }
+
+console.log(playerChoice)

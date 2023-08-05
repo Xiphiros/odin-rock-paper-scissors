@@ -53,7 +53,11 @@ body {
 }
 
 .choice-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5rem;
+    font-weight: bold;
 }
 
 .options-container {
@@ -74,7 +78,15 @@ body {
     border-radius: 2rem;
 }
 
-/* Info container (rounds number, result, etc) */
+/* Center container (rounds number, result, play button...) */
+
+.center-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 .info-container {
     display: flex;
