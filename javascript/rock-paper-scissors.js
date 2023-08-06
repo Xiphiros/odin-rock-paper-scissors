@@ -1,6 +1,5 @@
 // Introduction of the program to the player and definition of variables
 let playerChoice = null
-let computerChoice = null
 
 const playerButtons = document.querySelectorAll('.player-choice-container .options-item')
 
