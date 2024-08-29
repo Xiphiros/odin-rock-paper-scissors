@@ -17,10 +17,8 @@ The purpose of this project is to make a rock paper scissors game to be played i
 
 ## Built With
 
-Mention the technologies and tools you used to build the project:
-
 - **JavaScript**
 
 ## Setup and Installation
 
-Clone the repository and open index.html in your browser, or preferably open the [Github Pages](#) site.
+Clone the repository and open index.html in your browser, or preferably open the [Github Pages](https://github.com/Xiphiros/odin-rock-paper-scissors/) site.
