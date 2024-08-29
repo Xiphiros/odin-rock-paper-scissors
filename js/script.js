@@ -70,7 +70,7 @@ function getHumanChoice() {
 }
 
 function getComputerChoice() {
-    let randomNumber = Math.random * 3;
+    let randomNumber = Math.random() * 3;
 
     if (randomNumber < 1) {
         return "rock";
