@@ -93,6 +93,7 @@ function playRound() {
             console.log("You win!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
             console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+            return "win"
         } else if (
         (humanChoice === "rock" && computerChoice === "paper") || 
         (humanChoice === "paper" && computerChoice === "scissors") || 
@@ -100,10 +101,39 @@ function playRound() {
     ) {
             console.log("You lose!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
-            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1));
+            return "loss"
         } else if (humanChoice === computerChoice) {
             console.log("It's a tie!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
             console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+            return "tie"
         }
+}
+
+function playGame() {
+    let roundNumbers = prompt("Enter the number of rounds: ", "5");
+    let humanScore = 0;
+    let computerScore = 0;
+    let tiesCount = 0;
+
+    for (let i = 0; i < roundNumbers; i++) {
+        let result = playRound()
+
+        switch(result) {
+            case "win":
+                humanScore++;
+                break;
+            case "loss":
+                computerScore++;
+                break;
+            case "tie":
+                tiesCount++;
+                break;
+        }
+    }
+
+    console.log("Human score: " + humanScore);
+    console.log("Computer score: " + computerScore);
+    console.log("Total ties: " + tiesCount);
 }
