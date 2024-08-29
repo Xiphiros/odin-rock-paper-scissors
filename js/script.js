@@ -143,3 +143,5 @@ function playGame() {
     console.log("Computer score: " + computerScore);
     console.log("Total ties: " + tiesCount);
 }
+
+playGame()
