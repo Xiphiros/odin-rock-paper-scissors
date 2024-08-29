@@ -80,3 +80,30 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+function playRound() {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+
+    if (
+        (humanChoice === "rock" && computerChoice === "scissors") || 
+        (humanChoice === "paper" && computerChoice === "rock") || 
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+            console.log("You win!");
+            console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+        } else if (
+        (humanChoice === "rock" && computerChoice === "paper") || 
+        (humanChoice === "paper" && computerChoice === "scissors") || 
+        (humanChoice === "scissors" && computerChoice === "rock")
+    ) {
+            console.log("You lose!");
+            console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+        } else if (humanChoice === computerChoice) {
+            console.log("It's a tie!");
+            console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
+        }
+}
