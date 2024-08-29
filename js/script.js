@@ -64,7 +64,7 @@ function getHumanChoice() {
             return humanChoice;
             break;
         default:
-            console.log("Invalid input! Please enter rock, paper or scissors");
+            return "error";
             break;
     }
 }
@@ -92,8 +92,8 @@ function playRound() {
     ) {
             console.log("You win!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
-            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
-            return "win"
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1));
+            return "win";
         } else if (
         (humanChoice === "rock" && computerChoice === "paper") || 
         (humanChoice === "paper" && computerChoice === "scissors") || 
@@ -102,12 +102,15 @@ function playRound() {
             console.log("You lose!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
             console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1));
-            return "loss"
+            return "loss";
         } else if (humanChoice === computerChoice) {
             console.log("It's a tie!");
             console.log("Your choice was: " + humanChoice.slice(0, 1).toUpperCase() + humanChoice.slice (1));
-            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1))
-            return "tie"
+            console.log("The computer's choice was: " + computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1));
+            return "tie";
+        } else if (humanChoice === "error") {
+            console.log("Invalid input! Please enter rock, paper or scissors");
+            return "error";
         }
 }
 
@@ -129,6 +132,9 @@ function playGame() {
                 break;
             case "tie":
                 tiesCount++;
+                break;
+            case "error":
+                i--;
                 break;
         }
     }
