@@ -53,7 +53,18 @@
 //      Call playRound()
 
 function getHumanChoice() {
-    let humanChoice = prompt("What's your choice?", "");
+    let humanChoice = prompt("What's your choice?", "").toLowerCase();
 
     console.log(humanChoice);
+
+    switch(humanChoice) {
+        case "rock":
+        case "paper":
+        case "scissors":
+            return humanChoice;
+            break;
+        default:
+            console.log("Invalid input! Please enter rock, paper or scissors");
+            break;
+    }
 }
