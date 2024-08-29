@@ -21,4 +21,4 @@ The purpose of this project is to make a rock paper scissors game to be played i
 
 ## Setup and Installation
 
-Clone the repository and open index.html in your browser, or preferably open the [Github Pages](https://github.com/Xiphiros/odin-rock-paper-scissors/) site.
+Clone the repository and open index.html in your browser, or preferably open the [Github Pages](https://xiphiros.github.io/odin-rock-paper-scissors) site.
